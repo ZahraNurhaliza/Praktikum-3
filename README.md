@@ -73,15 +73,15 @@ insert into Mahasiswa (nim, nama, jenis_kelamin, tgl_lahir, jalan, kota, kodepos
 ('11223349', 'Anton Sinaga', 'Laki-laki', '1988-03-10', NULL, 'Cikarang', NULL, NULL, 'DS005');
 select * from Mahasiswa;
 ```
-![image](https://github.com/ZahraNurhaliza/Praktikum3/blob/main/screenshot/1.1png)
-![image](https://github.com/ZahraNurhaliza/Praktikum3/blob/main/screenshot/1.2png)
+![image](https://github.com/ZahraNurhaliza/Praktikum-3/blob/main/screenshot/1.1.png)
+![image](https://github.com/ZahraNurhaliza/Praktikum-3/blob/main/screenshot/1.2.png)
 
 
 2.	Hapus satu record data pada table dosen yang telah dirujuk pada table mahasiswa.
 ``` python
 delete from Dosen where kd_ds = 'DS002';
 ```
-![image](https://github.com/ZahraNurhaliza/Praktikum3/blob/main/screenshot/1.3png)
+![image](https://github.com/ZahraNurhaliza/Praktikum-3/blob/main/screenshot/1.3png)
 Keterangan : Terjadi error dikarenakan `kd_ds` pada tabel Mahasiswa merupakan 
 FOREIGN KEY dari tabel refensinya yaitu tabel Dosen. Dan pada tabel Dosen 
 `kd_ds` merupakan PRIMARY KEY. Itu artinya, tabel Dosen sebagai tabel 
@@ -93,21 +93,21 @@ menghapus satu record data pada tabel dosen terjadi error
 alter table Mahasiswa drop foreign key FK_DosenWali;
 alter table Mahasiswa add constraint FK_DosenMahasiswa foreign key (kd_ds) references Dosen(kd_ds) on update cascade on delete restrict;
 ```
-![image](https://github.com/ZahraNurhaliza/Praktikum3/blob/main/screenshot/1.4png)
+![image](https://github.com/ZahraNurhaliza/Praktikum-3/blob/main/screenshot/1.4png)
 
 
 4.	Lakukan perubahan data pada table dosen (kd_ds)
 ```python
 update Dosen set kd_ds = 'DS007' where kd_ds = 'DS005';
 ```
-![image](https://github.com/ZahraNurhaliza/Praktikum3/blob/main/screenshot/1.5png)
+![image](https://github.com/ZahraNurhaliza/Praktikum-3/blob/main/screenshot/1.5png)
 
 
 5.	Lakukan penghapusan data pada table dosen
 ```python
 delete from Dosen where kd_ds = 'DS001';
 ```
-![image](https://github.com/ZahraNurhaliza/Praktikum3/blob/main/screenshot/1.6png)
+![image](https://github.com/ZahraNurhaliza/Praktikum-3/blob/main/screenshot/1.6png)
 Keterangan : Terjadi ERROR 
  
 6.	Ubah mode menjadi ON UPDATE CASCADE ON DELETE SET NULL
@@ -115,14 +115,14 @@ Keterangan : Terjadi ERROR
 alter table Mahasiswa drop foreign key FK_DosenMahasiswa;
 alter table Mahasiswa add constraint FK_DosenWali foreign key (kd_ds) references Dosen(kd_ds) on update cascade on delete set null;
 ```
-![image](https://github.com/ZahraNurhaliza/Praktikum3/blob/main/screenshot/1.7png)
+![image](https://github.com/ZahraNurhaliza/Praktikum-3/blob/main/screenshot/1.7png)
 
  
 7.	Lakukan penghapusan data pada table dosen
 ```python
 delete from Dosen where kd_ds = 'DS004';
 ```
-![image](https://github.com/ZahraNurhaliza/Praktikum3/blob/main/screenshot/1.8png)
+![image](https://github.com/ZahraNurhaliza/Praktikum-3/blob/main/screenshot/1.8png)
 
 
 ## Evaluasi dan Pertanyaan
